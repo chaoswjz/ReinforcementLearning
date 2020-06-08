@@ -104,6 +104,7 @@ if __name__ == "__main__":
             next_state, reward, done, info = env.step(action)
             agent.learning(state, next_state, action, reward, done)
 
+            state = next_state
             #time.sleep(1)
 
             if done:
@@ -118,6 +119,8 @@ if __name__ == "__main__":
         action = agent.takeAction(state)
         next_state, reward, done, info = env.step(action)
         agent.learning(state, next_state, action, reward, done)
+
+        state = next_state
 
         time.sleep(1)
 
