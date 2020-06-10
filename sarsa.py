@@ -73,8 +73,8 @@ class SARSA:
     '''
     learning:
         use bellman equation and TD to update q table in every episode
-    q-learning is off-policy since we update it in TD in a way of taking the
-    max Q(s, a) in the new state regardless the actual action taken in the next state
+    sarsa is on-policy since we update our q tablb with TD target using 
+    next action chosen based on behavior policy
     '''
     def learning(self, state, next_state, action, reward, done):
         TD_target = reward
